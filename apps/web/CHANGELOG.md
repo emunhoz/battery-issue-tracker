@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/emunhoz/battery-issue-tracker/compare/web@0.3.0...web@0.4.0) (2023-05-31)
+
+
+### Features
+
+* **apps/web:** adding layout for home page ([2faf8a6](https://github.com/emunhoz/battery-issue-tracker/commit/2faf8a6722e274da10376a8910fdbcf7699fa401))
+
+
+
+
+
 # [0.3.0](https://github.com/emunhoz/battery-issue-tracker/compare/web@0.2.0...web@0.3.0) (2023-05-31)
 
 
