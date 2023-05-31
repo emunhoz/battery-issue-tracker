@@ -1,0 +1,23 @@
+{
+  "name": "battery-issue-tracker",
+  "private": true,
+  "description": "Track and identify schools with the highest number of battery issues",
+  "main": "index.js",
+  "scripts": {
+    "version:ci": "lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish %v'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=v18.12.1",
+    "npm": ">=8.19.2"
+  },
+  "devDependencies": {
+    "lerna": "^6.6.1"
+  }
+}

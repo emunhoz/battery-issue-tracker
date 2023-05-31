@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "useWorkspaces": true,
+  "version": "independent",
+  "verifyAccess": false,
+  "verifyRegistry": false,
+  "command": {
+    "publish": {
+      "registry": "https://npm.pkg.github.com/"
+    },
+    "version": {
+      "conventionalCommits": true,
+      "verifyAccess": false,
+      "verifyRegistry": false,
+      "createRelease": "github",
+      "exact": true,
+      "allowBranch": "main",
+      "ignoreChanges": ["**/*.md"]
+    }
+  },
+  "packages": [
+    "packages/*",
+    "apps/*"
+  ]
+}
