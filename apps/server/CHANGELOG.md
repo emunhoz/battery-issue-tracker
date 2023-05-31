@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/emunhoz/battery-issue-tracker/compare/server@0.1.2...server@0.2.0) (2023-05-31)
+
+
+### Features
+
+* setup `@apollo/server` ([1fac1bd](https://github.com/emunhoz/battery-issue-tracker/commit/1fac1bdc62b18ec9c4f7111b14ab78d95e4bc99b))
+
+
+
+
+
 ## [0.1.2](https://github.com/emunhoz/battery-issue-tracker/compare/server@0.1.1...server@0.1.2) (2023-05-31)
 
 **Note:** Version bump only for package server
