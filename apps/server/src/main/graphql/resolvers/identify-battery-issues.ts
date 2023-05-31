@@ -5,13 +5,7 @@ import { prisma } from '../../../../prisma/client'
 @Resolver()
 export class IdentifyBatteryIssuesResolver {
   @Query(() => [IdentifyBatteryIssuesModel])
-  async batteryIssues(): Promise<
-    {
-      academyId: number
-      totalProblems: number
-      devices: string[]
-    }[]
-  > {
+  async batteryIssues(): Promise<IdentifyBatteryIssuesModel[]> {
     const batteryData = await prisma.battery.findMany()
     const academies: {
       [key: number]: { totalProblems: number; devices: Set<string> }
