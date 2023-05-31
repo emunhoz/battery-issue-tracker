@@ -1,0 +1,44 @@
+body {
+  padding: 20px;
+}
+.device-list {
+  background: #fff;
+  margin-bottom: 12px;
+  color: #242424;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.device-list-wrapper {
+  display: flex;
+}
+
+.device-list-wrapper img {
+  margin-right: 8px;
+  width: 28px;
+}
+
+.device-list-item {
+  display: flex;
+}
+
+.device-list-academy {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.device-list-academy-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 400;
+
+}
+
+.device-list-academy-value {
+  font-weight: 600;
+  font-size: 18px;
+}
