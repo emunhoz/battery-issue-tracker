@@ -15,7 +15,8 @@
       "createRelease": "github",
       "exact": true,
       "allowBranch": "main",
-      "ignoreChanges": ["**/*.md"]
+      "ignoreChanges": ["**/*.md"],
+      "message": "chore(release): publish %v"
     }
   },
   "packages": [

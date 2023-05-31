@@ -4,7 +4,7 @@
   "description": "Track and identify schools with the highest number of battery issues",
   "main": "index.js",
   "scripts": {
-    "version:ci": "lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish %v'"
+    "version:ci": "lerna version --yes --conventional-commits --create-release github"
   },
   "keywords": [],
   "author": "",
