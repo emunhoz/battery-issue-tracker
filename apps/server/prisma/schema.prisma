@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,12 +8,12 @@ datasource db {
 }
 
 model Battery {
-  id           Int      @id @default(autoincrement())
   academyId    Int
   batteryLevel Float
   employeeId   String
   serialNumber String
   timestamp    DateTime
+  id           String   @id @default(uuid())
 
   @@map("batteries")
 }
