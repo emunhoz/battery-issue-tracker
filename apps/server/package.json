@@ -17,6 +17,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@apollo/server": "^4.7.1",
     "@prisma/client": "^4.15.0",
     "class-validator": "^0.14.0",
     "graphql": "^16.6.0",
