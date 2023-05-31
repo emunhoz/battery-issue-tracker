@@ -16,7 +16,7 @@
       "exact": true,
       "allowBranch": "main",
       "ignoreChanges": ["**/*.md"],
-      "message": "chore(release): publish %v"
+      "message": "chore(release): publish"
     }
   },
   "packages": [
