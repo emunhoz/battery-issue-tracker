@@ -1,11 +1,11 @@
 import { ApolloServer } from '@apollo/server'
 import { buildSchema } from 'type-graphql'
 import { startStandaloneServer } from '@apollo/server/standalone'
-import { BatteriesResolver, IdentifyBatteryIssuesResolver } from '../resolvers'
+import { IdentifyBatteryIssuesResolver } from '../resolvers'
 
 export async function setupApolloServer() {
   const schema = await buildSchema({
-    resolvers: [BatteriesResolver, IdentifyBatteryIssuesResolver],
+    resolvers: [IdentifyBatteryIssuesResolver],
   })
 
   const server = new ApolloServer({ schema })
