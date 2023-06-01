@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/emunhoz/battery-issue-tracker/compare/web@0.5.0...web@0.6.0) (2023-06-01)
+
+
+### Features
+
+* **apps/web:** pages folder with react-router-dom ([52b76b9](https://github.com/emunhoz/battery-issue-tracker/commit/52b76b90aff449efa6a62138675a382b40372b46))
+
+
+
+
+
 # [0.5.0](https://github.com/emunhoz/battery-issue-tracker/compare/web@0.4.0...web@0.5.0) (2023-06-01)
 
 
