@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/emunhoz/battery-issue-tracker/compare/web@0.4.0...web@0.5.0) (2023-06-01)
+
+
+### Features
+
+* **apps/web:** adding dark/light color css variables ([a37438d](https://github.com/emunhoz/battery-issue-tracker/commit/a37438dc9437c86eddcf0b189363322aea76d3e0))
+
+
+
+
+
 # [0.4.0](https://github.com/emunhoz/battery-issue-tracker/compare/web@0.3.0...web@0.4.0) (2023-05-31)
 
 
