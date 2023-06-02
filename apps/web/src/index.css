@@ -8,6 +8,11 @@
   --background: #fff;
   --text: #242424;
   --background-secondary: #fff;
+  --font-weigth-bold: 600;
+  --font-weigth-normal: 400;
+  --font-size-small: 10px;
+  --font-size-medium: 14px;
+  --font-size-big: 18px;
   
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -10,7 +10,7 @@ body {
 }
 
 .main-title {
-  font-weight: 600;
+  font-weight: var(--font-weigth-bold);
   margin-bottom: 20px;
   color: var(--text);
 }

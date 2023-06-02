@@ -6,13 +6,11 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import { HomePage } from './pages/home/Home.page'
-import { ReportDetailsPage } from './pages/report-details/ReportDetails.page'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route index element={<HomePage />} />
-      <Route path="report/:id" element={<ReportDetailsPage />} />
     </Route>
   )
 )

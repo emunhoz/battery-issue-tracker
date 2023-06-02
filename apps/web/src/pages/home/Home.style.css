@@ -28,6 +28,10 @@ ul {
 .device-list-item {
   display: flex;
   align-items: center;
+  font-weight: var(--font-weigth-bold);
+  font-size: var(--font-size-medium);
+  margin-bottom: 14px;
+  color: var(--text);
 }
 
 .device-list-academy {
@@ -37,13 +41,16 @@ ul {
 }
 
 .device-list-academy-label {
-  font-size: 10px;
+  font-size: var(--font-size-small);
   text-transform: uppercase;
-  font-weight: 400;
-
+  font-weight: var(--font-weigth-normal);
 }
 
 .device-list-academy-value {
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: var(--font-weigth-bold);
+  font-size: var(--font-size-big);
+}
+
+.details {
+  margin-bottom: 20px;
 }
