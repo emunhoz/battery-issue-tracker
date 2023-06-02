@@ -1,12 +1,12 @@
-import { Field, ObjectType } from 'type-graphql'
+import { Field, Int, ObjectType } from 'type-graphql'
 
 @ObjectType()
 export class IdentifyBatteryIssuesModel {
-  @Field((type) => Number)
-  academyId: Number
+  @Field((type) => Int)
+  academyId: number
 
-  @Field(() => Number)
-  totalProblems: Number
+  @Field(() => Int)
+  totalProblems: number
 
   @Field(() => [String])
   devices: string[]

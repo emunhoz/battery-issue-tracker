@@ -1,11 +1,13 @@
-import { Query, Resolver } from 'type-graphql'
+import { Arg, Int, Query, Resolver } from 'type-graphql'
 import { IdentifyBatteryIssuesModel } from '../dts/models/identify-battery-issues'
 import { prisma } from '../../../../prisma/client'
 
 @Resolver()
 export class IdentifyBatteryIssuesResolver {
   @Query(() => [IdentifyBatteryIssuesModel])
-  async batteryIssues(): Promise<IdentifyBatteryIssuesModel[]> {
+  async batteryIssues(
+    @Arg('academyId', (type) => Int, { nullable: true }) academyId?: number
+  ): Promise<IdentifyBatteryIssuesModel[]> {
     const batteryData = await prisma.battery.findMany()
     const academies: {
       [key: number]: { totalProblems: number; devices: Set<string> }
@@ -25,12 +27,16 @@ export class IdentifyBatteryIssuesResolver {
       }
     }
 
-    return Object.entries(academies).map(
+    const findBatteries = Object.entries(academies).map(
       ([academyId, { totalProblems, devices }]) => ({
         academyId: Number(academyId),
         totalProblems,
         devices: Array.from(devices),
       })
     )
+
+    return academyId
+      ? findBatteries.filter((item) => item.academyId === academyId)
+      : findBatteries
   }
 }
