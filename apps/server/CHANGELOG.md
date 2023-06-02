@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/emunhoz/battery-issue-tracker/compare/server@0.3.3...server@0.4.0) (2023-06-02)
+
+
+### Features
+
+* **apps/server:** adding `academyId` filter option ([2a37d7c](https://github.com/emunhoz/battery-issue-tracker/commit/2a37d7ce849ffefa21cf0a0de299631e57d0c8c6))
+
+
+
+
+
 ## [0.3.3](https://github.com/emunhoz/battery-issue-tracker/compare/server@0.3.2...server@0.3.3) (2023-06-01)
 
 **Note:** Version bump only for package server
