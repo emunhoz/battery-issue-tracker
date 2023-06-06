@@ -1,13 +1,34 @@
 import { Field, Int, ObjectType } from 'type-graphql'
 
 @ObjectType()
-export class IdentifyBatteryIssuesModel {
-  @Field((type) => Int)
+export class DatesEntry {
+  @Field(() => String)
+  day: string
+
+  @Field(() => [Number])
+  batteryLevels: number[]
+
+  @Field(() => String)
+  averageDailyUsage: string
+
+  @Field(() => Int, { nullable: true })
   academyId: number
 
-  @Field(() => Int)
-  totalProblems: number
+  @Field(() => Boolean)
+  wasRecharged: boolean
+}
 
-  @Field(() => [String])
-  devices: string[]
+@ObjectType()
+export class BatteryIssuesModel {
+  @Field(() => String)
+  serialNumber: string
+
+  @Field(() => Int, { nullable: true })
+  academyId: number
+
+  @Field(() => Boolean)
+  needReplacement: boolean
+
+  @Field(() => [DatesEntry])
+  dates: DatesEntry[]
 }

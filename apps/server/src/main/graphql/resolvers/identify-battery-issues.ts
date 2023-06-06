@@ -1,42 +1,30 @@
-import { Arg, Int, Query, Resolver } from 'type-graphql'
-import { IdentifyBatteryIssuesModel } from '../dts/models/identify-battery-issues'
+import { Query, Resolver } from 'type-graphql'
+import { BatteryIssuesModel } from '../dts/models/identify-battery-issues'
 import { prisma } from '../../../../prisma/client'
+import { groupDataBySerialNumber } from '../functions/group-data-by-serial-number'
+import { NeedReplacementModel } from '../dts/models/need-replacements'
+import { countAcademyIds } from '../functions/count-academy-needs-replacement'
 
 @Resolver()
 export class IdentifyBatteryIssuesResolver {
-  @Query(() => [IdentifyBatteryIssuesModel])
-  async batteryIssues(
-    @Arg('academyId', (type) => Int, { nullable: true }) academyId?: number
-  ): Promise<IdentifyBatteryIssuesModel[]> {
-    const batteryData = await prisma.battery.findMany()
-    const academies: {
-      [key: number]: { totalProblems: number; devices: Set<string> }
-    } = {}
+  @Query(() => [BatteryIssuesModel])
+  async batteryIssues(): Promise<BatteryIssuesModel[]> {
+    const data = await prisma.battery.findMany({
+      orderBy: {
+        timestamp: 'asc',
+      },
+    })
 
-    for (const battery of batteryData) {
-      if (battery.batteryLevel < 0.3) {
-        if (!academies[battery.academyId]) {
-          academies[battery.academyId] = {
-            totalProblems: 0,
-            devices: new Set<string>(),
-          }
-        }
+    return groupDataBySerialNumber(data)
+  }
 
-        academies[battery.academyId].totalProblems++
-        academies[battery.academyId].devices.add(battery.serialNumber)
-      }
-    }
+  @Query(() => [NeedReplacementModel])
+  async getAcademyIdWithMostReplacements() {
+    const academyIdWithMostReplacements = await this.batteryIssues()
 
-    const findBatteries = Object.entries(academies).map(
-      ([academyId, { totalProblems, devices }]) => ({
-        academyId: Number(academyId),
-        totalProblems,
-        devices: Array.from(devices),
-      })
-    )
+    const onlyDevicesThatNeedToBeReplaced =
+      academyIdWithMostReplacements.filter((report) => report.needReplacement)
 
-    return academyId
-      ? findBatteries.filter((item) => item.academyId === academyId)
-      : findBatteries
+    return await countAcademyIds(onlyDevicesThatNeedToBeReplaced)
   }
 }
