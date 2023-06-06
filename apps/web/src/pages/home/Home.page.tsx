@@ -1,17 +1,8 @@
-import { useQuery, gql } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 import { useState } from 'react'
 import { DetailsIcon, DeviceIcon, SchoolIcon, WarningIcon } from '../../icons'
+import { GET_BATTERIES_ISSUES } from './queries/batteries-issues'
 import './Home.style.css'
-
-const GET_BATTERIES_ISSUES = gql`
-  query BatteriesIssues {
-    batteryIssues {
-      academyId
-      devices
-      totalProblems
-    }
-  }
-`
 
 export const HomePage = () => {
   const { loading, error, data } = useQuery(GET_BATTERIES_ISSUES)
@@ -29,13 +20,13 @@ export const HomePage = () => {
 
   return (
     <ul>
-      {data.batteryIssues.map(
+      {data.getAcademyIdWithMostReplacements.map(
         (report: {
           academyId: string
           devices: string[]
-          totalProblems: number
+          totalReplacements: number
         }) => (
-          <li key={report.academyId}>
+          <li key={report.academyId} data-testid={report.academyId}>
             <div className="device-list">
               <div className="device-list-wrapper">
                 <img src={SchoolIcon} alt="Academy icon" />
@@ -48,17 +39,7 @@ export const HomePage = () => {
                   </div>
                 </div>
               </div>
-              <div className="device-list-wrapper">
-                <img src={DeviceIcon} alt="Device icon" />
-                <div className="device-list-academy">
-                  <label className="device-list-academy-label">
-                    Device problem
-                  </label>
-                  <div className="device-list-academy-value">
-                    {report.devices.length}
-                  </div>
-                </div>
-              </div>
+
               <div className="device-list-wrapper">
                 <img src={WarningIcon} alt="Total problem icon" />
                 <div className="device-list-academy">
@@ -66,7 +47,7 @@ export const HomePage = () => {
                     Total problem
                   </label>
                   <div className="device-list-academy-value">
-                    {report.totalProblems}
+                    {report.totalReplacements}
                   </div>
                 </div>
               </div>
