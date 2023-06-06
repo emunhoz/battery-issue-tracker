@@ -78,7 +78,7 @@ In the root folder run the following command:
 1. Running the project (Web + Server)
 
 ```bash
-  npm dev
+  npm run dev
 ```
 
 Front is running at: http://localhost:5173/
@@ -96,5 +96,5 @@ Server playground: http://localhost:4000/
 In the root folder run the following command:
 
 ```bash
-  npm test
+  npm run test
 ```
