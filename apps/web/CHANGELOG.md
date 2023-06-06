@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/emunhoz/battery-issue-tracker/compare/web@0.6.1...web@0.7.0) (2023-06-06)
+
+
+### Features
+
+* **apps/web:** testing `Home.page` component ([6035f98](https://github.com/emunhoz/battery-issue-tracker/commit/6035f98319dba0c6aa741934f2786bf7e656f784))
+
+
+
+
+
 ## [0.6.1](https://github.com/emunhoz/battery-issue-tracker/compare/web@0.6.0...web@0.6.1) (2023-06-02)
 
 **Note:** Version bump only for package web
