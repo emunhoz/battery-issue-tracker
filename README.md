@@ -85,6 +85,12 @@ Front is running at: http://localhost:5173/
 
 Server playground: http://localhost:4000/
 
+## Demo
+
+![Layout Dark](.github/media/layout-dark.png)
+
+![Layout White](.github/media/layout-white.png)
+
 ## 🚦 Testing
 
 In the root folder run the following command:
